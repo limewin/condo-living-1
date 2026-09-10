@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEFBE9"/>
+      <stop offset="100%" stop-color="#EBF4D3"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D7E9B9"/>
+      <stop offset="100%" stop-color="#BADB88"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#22252A" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Base Rounded Container -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle inner border -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="#D7E9B9" stroke-width="4" stroke-opacity="0.6"/>
+
+  <!-- Main Card Graphic -->
+  <g filter="url(#shadow)">
+    <!-- Building/Condo silhouette -->
+    <rect x="120" y="150" width="272" height="240" rx="28" fill="#FFFFFF"/>
+    
+    <!-- Accent Top Bar -->
+    <path d="M 120 178 Q 120 150 148 150 L 364 150 Q 392 150 392 178 L 392 200 L 120 200 Z" fill="url(#greenGrad)"/>
+    
+    <!-- Modern Roof / Penthouse Peak Accent -->
+    <path d="M 160 150 L 256 92 L 352 150 Z" fill="#2D3139"/>
+    <circle cx="256" cy="122" r="8" fill="#D7E9B9"/>
+
+    <!-- Condo Windows Grid -->
+    <rect x="156" y="230" width="42" height="42" rx="8" fill="#FEFBE9" stroke="#D7E9B9" stroke-width="2.5"/>
+    <rect x="235" y="230" width="42" height="42" rx="8" fill="#FEFBE9" stroke="#D7E9B9" stroke-width="2.5"/>
+    <rect x="314" y="230" width="42" height="42" rx="8" fill="#FEFBE9" stroke="#D7E9B9" stroke-width="2.5"/>
+    
+    <!-- Door / Entrance with Checklist Accent -->
+    <rect x="228" y="304" width="56" height="86" rx="10" fill="#2D3139"/>
+    <circle cx="270" cy="348" r="4" fill="#D7E9B9"/>
+    
+    <!-- Shopping Bag / Checklist Badge overlay -->
+    <circle cx="370" cy="350" r="44" fill="url(#greenGrad)" stroke="#FFFFFF" stroke-width="5"/>
+    <!-- Checkmark -->
+    <path d="M 353 350 L 365 362 L 389 336" fill="none" stroke="#22252A" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

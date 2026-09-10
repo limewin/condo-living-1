@@ -1,0 +1,158 @@
+{
+  "entities": {
+    "Item": {
+      "title": "Item",
+      "description": "A condo move-in item to purchase or track",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "quantity": { "type": "number" },
+        "unitPrice": { "type": "number" },
+        "totalPrice": { "type": "number" },
+        "priority": { "type": "string", "enum": ["critical", "high", "medium", "low", "optional"] },
+        "status": { "type": "string", "enum": ["need_to_buy", "researching", "planned", "ordered", "purchased", "already_owned", "no_longer_needed"] },
+        "purchaseMethod": { "type": "string", "enum": ["online", "physical"] },
+        "store": { "type": "string", "maxLength": 100 },
+        "storeLocation": { "type": "string", "maxLength": 200 },
+        "productUrl": { "type": "string", "maxLength": 2000 },
+        "imageUrl": { "type": "string", "maxLength": 1000000 },
+        "notes": { "type": "string", "maxLength": 2000 },
+        "targetPurchaseDate": { "type": "string", "maxLength": 50 },
+        "isEssential": { "type": "boolean" },
+        "timelineStage": { "type": "string", "enum": ["before_move", "first_week", "after_settling_in"] },
+        "alreadyOwned": { "type": "boolean" },
+        "actualPricePaid": { "type": "number" },
+        "purchaseDate": { "type": "string", "maxLength": 50 },
+        "options": { "type": "array" },
+        "isDemo": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "name", "category", "quantity", "unitPrice", "priority", "status", "purchaseMethod"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Category for items",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "icon": { "type": "string", "maxLength": 50 },
+        "isCustom": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "name"]
+    },
+    "Store": {
+      "title": "Store",
+      "description": "A store or platform used for purchasing items",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "type": { "type": "string", "enum": ["online", "physical"] },
+        "location": { "type": "string", "maxLength": 200 },
+        "notes": { "type": "string", "maxLength": 500 },
+        "isCustom": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "name", "type"]
+    },
+    "Note": {
+      "title": "Note",
+      "description": "Personal condo notes and reminders",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string", "maxLength": 200 },
+        "content": { "type": "string", "maxLength": 10000 },
+        "category": { "type": "string", "maxLength": 100 },
+        "pinned": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "title"]
+    },
+    "CondoDetails": {
+      "title": "CondoDetails",
+      "description": "Information about the condo unit and move-in details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "condoName": { "type": "string", "maxLength": 200 },
+        "address": { "type": "string", "maxLength": 500 },
+        "unit": { "type": "string", "maxLength": 100 },
+        "moveInDate": { "type": "string", "maxLength": 50 },
+        "roommates": { "type": "string", "maxLength": 1000 },
+        "landlordContact": { "type": "string", "maxLength": 500 },
+        "monthlyRent": { "type": "number" },
+        "utilities": { "type": "string", "maxLength": 500 },
+        "internet": { "type": "string", "maxLength": 500 },
+        "laundryInfo": { "type": "string", "maxLength": 500 },
+        "houseRules": { "type": "string", "maxLength": 2000 },
+        "otherNotes": { "type": "string", "maxLength": 2000 },
+        "upperBunkNotes": { "type": "string", "maxLength": 1000 },
+        "drillingAllowed": { "type": "string", "maxLength": 200 },
+        "adhesiveAllowed": { "type": "string", "maxLength": 200 },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId"]
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "User preferences and move-in budget",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "moveInBudget": { "type": "number" },
+        "monthlyBudget": { "type": "number" },
+        "currency": { "type": "string", "maxLength": 10 },
+        "theme": { "type": "string", "maxLength": 20 },
+        "defaultPriority": { "type": "string", "maxLength": 20 },
+        "defaultStore": { "type": "string", "maxLength": 100 },
+        "defaultSorting": { "type": "string", "maxLength": 50 },
+        "hasCompletedOnboarding": { "type": "boolean" },
+        "hasLoadedDemoData": { "type": "boolean" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/items/{itemId}": {
+      "schema": "Item",
+      "description": "User's move-in items shopping list"
+    },
+    "/users/{userId}/categories/{categoryId}": {
+      "schema": "Category",
+      "description": "User's item categories"
+    },
+    "/users/{userId}/stores/{storeId}": {
+      "schema": "Store",
+      "description": "User's custom stores and platforms"
+    },
+    "/users/{userId}/notes/{noteId}": {
+      "schema": "Note",
+      "description": "User's condo notes"
+    },
+    "/users/{userId}/condoDetails/{detailId}": {
+      "schema": "CondoDetails",
+      "description": "User's condo and lease details"
+    },
+    "/users/{userId}/settings/{settingId}": {
+      "schema": "Settings",
+      "description": "User's preferences and budget settings"
+    }
+  }
+}

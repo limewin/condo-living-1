@@ -1,0 +1,7 @@
+{
+  "name": "Condo Move-In Planner",
+  "description": "A sleek personal move-in command center and shopping dashboard for planning, organizing, budgeting, and tracking everything needed when moving into a shared condo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
